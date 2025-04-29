@@ -48,17 +48,17 @@ const RavanVoiceAI = () => {
   // Change agent name to Ravan
   useEffect(() => {
     if (status === "disconnected") {
-      setSpeech("Talk To Ravan");
+      setSpeech("Talk To Jhon");
     } else if (status === "connecting") {
-      setSpeech("Connecting To Ravan");
+      setSpeech("Connecting To Jhon");
     } else if (status === "speaking") {
-      setSpeech("Ravan is Speaking");
+      setSpeech("Jhon is Speaking");
     } else if (status === "connected") {
-      setSpeech("Connected To Ravan");
+      setSpeech("Connected To Jhon");
     } else if (status === "disconnecting") {
-      setSpeech("Ending Conversation With Ravan");
+      setSpeech("Ending Conversation With Jhon");
     } else if (status === "listening") {
-      setSpeech("Ravan is Listening");
+      setSpeech("Jhon is Listening");
     }
   }, [status]);
 
@@ -260,7 +260,7 @@ const RavanVoiceAI = () => {
 
   const toggleExpand = () => {
     if (status === "disconnected") {
-      setSpeech("Connecting To Ravan");
+      setSpeech("Connecting To Jhon");
       handleMicClick();
     }
     if (session.isSpeakerMuted) {
@@ -405,7 +405,7 @@ const RavanVoiceAI = () => {
 
               <div className="transcript-container" ref={containerRef}>
                 <div className="relative">
-                  <span className="transcript-text">{transcripts}</span>
+                  <span className=" text-white">{transcripts}</span>
                   {!transcripts && (
                     <span className="text-gray-400 italic">
                       Your conversation will appear here...
@@ -449,20 +449,25 @@ const RavanVoiceAI = () => {
           )}
         </div>
       ) : (
-        <button
-          onClick={toggleExpand}
-          // disabled={isDisconnecting || isConnecting}
-          className="floating-button"
-        >
-          <div className="relative">
-            {/* {!isDisconnecting && !isConnecting && <div className="glow-ring"></div>} */}
-            <img
-              src={logo}
-              alt="Ravan AI logo"
-              className="w-8 h-8 relative z-10"
-            />
+        <div className="flex flex-col items-center justify-center gap-1">
+          <button
+            onClick={toggleExpand}
+            // disabled={isDisconnecting || isConnecting}
+            className="floating-button"
+          >
+            <div className="relative">
+              {/* {!isDisconnecting && !isConnecting && <div className="glow-ring"></div>} */}
+              <img
+                src={logo}
+                alt="Ravan AI logo"
+                className="w-8 h-8 relative z-10"
+              />
+            </div>
+          </button>
+          <div className="text-center text-white font-bold text-sm bg-[#7A65D8] rounded-md px-2  py-1">
+            <p>Talk to Jhon</p>
           </div>
-        </button>
+        </div>
       )}
     </div>
   );

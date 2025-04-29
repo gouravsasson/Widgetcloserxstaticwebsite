@@ -439,3 +439,26 @@
     filter: blur(2px);
   }
 }
+
+
+.glow-ring {
+  background: radial-gradient(circle, var(--primary-light) 20%, transparent 70%);
+  animation: glowRing 3s infinite ease-in-out;
+  filter: blur(8px);
+  opacity: 0.6;
+}
+
+@keyframes glowRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
