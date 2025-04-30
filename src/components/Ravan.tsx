@@ -48,17 +48,17 @@ const RavanVoiceAI = () => {
   // Change agent name to Ravan
   useEffect(() => {
     if (status === "disconnected") {
-      setSpeech("Talk To Jhon");
+      setSpeech("Talk To Luna");
     } else if (status === "connecting") {
-      setSpeech("Connecting To Jhon");
+      setSpeech("Connecting To Luna");
     } else if (status === "speaking") {
-      setSpeech("Jhon is Speaking");
+      setSpeech("Luna is Speaking");
     } else if (status === "connected") {
-      setSpeech("Connected To Jhon");
+      setSpeech("Connected To Luna");
     } else if (status === "disconnecting") {
-      setSpeech("Ending Conversation With Jhon");
+      setSpeech("Ending Conversation With Luna");
     } else if (status === "listening") {
-      setSpeech("Jhon is Listening");
+      setSpeech("Luna is Listening");
     }
   }, [status]);
 
@@ -465,7 +465,7 @@ const RavanVoiceAI = () => {
             </div>
           </button>
           <div className="text-center text-white font-bold text-sm bg-[#7A65D8] rounded-md px-2  py-1">
-            <p>Talk to Jhon</p>
+            <p>Talk to Luna</p>
           </div>
         </div>
       )}
