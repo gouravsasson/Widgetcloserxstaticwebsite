@@ -16,7 +16,7 @@
   --gradient-primary: linear-gradient(135deg, #5A42C0 0%, #7A65D8 100%);
   --gradient-accent: linear-gradient(135deg, #CFC9FF 0%, #A69EDC 0%);
   --gradient-surface: linear-gradient(135deg, rgba(50, 40, 95, 0.95) 0%, rgba(70, 55, 120, 0.98) 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.281) 100%);
   --gradient-glow: radial-gradient(circle at center, var(--primary-light) 0%, transparent 70%);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 } 

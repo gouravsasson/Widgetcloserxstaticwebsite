@@ -17,7 +17,7 @@ const RavanVoiceAI = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [speech, setSpeech] = useState("");
   const [isVisible, setIsVisible] = useState(true);
-  const { agent_id, schema } = useWidgetContext();
+  // const { agent_id, schema } = useWidgetContext();
   const [auto_end_call, setAutoEndCall] = useState(false);
   const [pulseEffects, setPulseEffects] = useState({
     small: false,
