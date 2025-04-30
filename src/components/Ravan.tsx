@@ -260,7 +260,7 @@ const RavanVoiceAI = () => {
 
   const toggleExpand = () => {
     if (status === "disconnected") {
-      setSpeech("Connecting To Jhon");
+      setSpeech("Connecting To Luna");
       handleMicClick();
     }
     if (session.isSpeakerMuted) {
