@@ -21,6 +21,33 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 } 
 
+.glow-ring {
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(173, 216, 230, 0.25) 0%, transparent 70%);
+  box-shadow:
+    0 0 12px rgba(0, 136, 255, 0.6),
+    0 0 24px rgba(0, 136, 255, 0.4),
+    0 0 36px rgba(0, 136, 255, 0.2);
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -442,24 +469,3 @@
 }
 
 
-.glow-ring {
-  background: radial-gradient(circle, var(--primary-light) 20%, transparent 70%);
-  animation: glowRing 3s infinite ease-in-out;
-  filter: blur(8px);
-  opacity: 0.6;
-}
-
-@keyframes glowRing {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-}

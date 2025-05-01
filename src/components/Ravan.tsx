@@ -456,7 +456,7 @@ const RavanVoiceAI = () => {
             className="floating-button"
           >
             <div className="relative">
-              {/* {!isDisconnecting && !isConnecting && <div className="glow-ring"></div>} */}
+              <div className="glow-ring absolute inset-0 z-0"></div>
               <img
                 src={logo}
                 alt="Ravan AI logo"
