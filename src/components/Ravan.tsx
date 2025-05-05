@@ -464,7 +464,7 @@ const RavanVoiceAI = () => {
               />
             </div>
           </button>
-          <div className="text-center text-white font-bold text-sm bg-[#7A65D8] rounded-md px-2  py-1">
+          <div className="talk-to-luna">
             <p>Talk to Luna</p>
           </div>
         </div>
