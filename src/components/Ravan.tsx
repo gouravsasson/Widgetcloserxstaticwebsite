@@ -391,7 +391,7 @@ const RavanVoiceAI = () => {
                   <div className="relative">
                     {isGlowing && <div className="glow-effect"></div>}
                     <img
-                      src="https://storage.googleapis.com/msgsndr/3Mh94ewIWZaOQuAxTDt4/media/6903148c4f4aad24be14c53f.jpeg"
+                      src={logo}
                       alt="Closerx AI logo"
                       className={`w-12 h-12 transition-transform duration-300 ${
                         isRecording ? "scale-110" : ""
@@ -458,7 +458,7 @@ const RavanVoiceAI = () => {
             <div className="relative">
               <div className="glow-ring absolute inset-0 z-0"></div>
               <img
-                src="https://storage.googleapis.com/msgsndr/3Mh94ewIWZaOQuAxTDt4/media/6903148c4f4aad24be14c53f.jpeg"
+                src={logo}
                 alt="Closerx AI logo"
                 className="w-8 h-8 relative z-10"
               />
