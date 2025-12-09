@@ -6,11 +6,20 @@ import "./index.css";
 
 class ReactWidget extends HTMLElement {
   private root: ReactDOM.Root | null = null;
-
+ private reactDispatch: any = null;
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
   }
+
+   setDispatcher(fn: any) {
+    this.reactDispatch = fn;
+  }
+
+    open() {
+    this.reactDispatch?.("open");
+  }
+
 
   connectedCallback() {
     const container = document.createElement("div");
@@ -30,7 +39,7 @@ class ReactWidget extends HTMLElement {
     this.root.render(
       <React.StrictMode>
         <WidgetProvider agent_id={agent_id} schema={schema}>
-          <App />
+          <App setDispatcher={(fn: any) => this.setDispatcher(fn)} />
         </WidgetProvider>
       </React.StrictMode>
     );

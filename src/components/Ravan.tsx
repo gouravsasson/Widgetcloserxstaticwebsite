@@ -63,6 +63,14 @@ const RavanVoiceAI = () => {
   }, [status]);
 
   useEffect(() => {
+  const handler = () => setExpanded(true);
+  window.addEventListener("open-widget", handler);
+
+  return () => window.removeEventListener("open-widget", handler);
+}, []);
+
+
+  useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.visibilityState === "hidden") {
         console.log("gg", document.visibilityState);
