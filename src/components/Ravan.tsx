@@ -17,7 +17,7 @@ const RavanVoiceAI = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [speech, setSpeech] = useState("");
   const [isVisible, setIsVisible] = useState(true);
-  const { agent_id, schema } = useWidgetContext();
+  // const { agent_id, schema } = useWidgetContext();
   const [auto_end_call, setAutoEndCall] = useState(false);
   const [pulseEffects, setPulseEffects] = useState({
     small: false,
@@ -27,7 +27,7 @@ const RavanVoiceAI = () => {
   const [message, setMessage] = useState("");
   const [isMinimized, setIsMinimized] = useState(false);
 
-  // const { agent_id, schema } = useWidgetContext();
+  const { agent_id, schema } = useWidgetContext();
   const { callId, callSessionId, setCallId, setCallSessionId } =
     useSessionStore();
   const {
@@ -393,8 +393,8 @@ const RavanVoiceAI = () => {
                     <img
                       src="https://storage.googleapis.com/msgsndr/3Mh94ewIWZaOQuAxTDt4/media/6903148c4f4aad24be14c53f.jpeg"
                       alt="Closerx AI logo"
-                      className={`w-12 h-12 transition-transform duration-300 ${
-                        isRecording ? "scale-110" : ""
+                      className={`w-full h-full object-cover scale-90 transition-transform duration-300 ${
+                        isRecording ? "scale-100" : "scale-90"
                       }`}
                     />
                   </div>
@@ -450,20 +450,17 @@ const RavanVoiceAI = () => {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center gap-1">
-          <button
-            onClick={toggleExpand}
-            // disabled={isDisconnecting || isConnecting}
-            className="floating-button"
-          >
-            <div className="relative">
-              <div className="glow-ring absolute inset-0 z-0"></div>
-              <img
-                src="https://storage.googleapis.com/msgsndr/3Mh94ewIWZaOQuAxTDt4/media/6903148c4f4aad24be14c53f.jpeg"
-                alt="Closerx AI logo"
-                className="w-8 h-8 relative z-10"
-              />
-            </div>
-          </button>
+          <button onClick={toggleExpand} className="floating-button">
+  <div className="relative w-full h-full">
+    <div className="glow-ring absolute inset-0 z-0"></div>
+    <img
+      src="https://storage.googleapis.com/msgsndr/3Mh94ewIWZaOQuAxTDt4/media/6903148c4f4aad24be14c53f.jpeg"
+      alt="Closerx AI logo"
+      className="w-full h-full object-cover scale-90 relative z-10"
+    />
+  </div>
+</button>
+
           <div className="talk-to-luna">
             <p>Talk to Luna</p>
           </div>

@@ -171,17 +171,18 @@
   }
 
   .mic-button {
-    @apply relative flex items-center justify-center;
-    @apply w-16 h-16 sm:w-28 sm:h-28 rounded-full;
-    @apply transition-all duration-300 transform;
-    @apply hover:scale-105 active:scale-95;
-    @apply touch-manipulation;
-    background: var(--gradient-primary);
-    box-shadow: 
-      0 20px 40px -10px var(--shadow),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.2),
-      0 8px 16px rgba(0, 0, 0, 0.1);
-  }
+  @apply relative flex items-center justify-center;
+  @apply w-16 h-16 sm:w-28 sm:h-28 rounded-full overflow-hidden;
+  @apply transition-all duration-300 transform;
+  @apply hover:scale-105 active:scale-95;
+  @apply touch-manipulation;
+  background: var(--gradient-primary);
+  box-shadow:
+    0 20px 40px -10px var(--shadow),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
 
   .mic-button.active {
     @apply scale-110;
@@ -309,17 +310,17 @@
   }
 
   .floating-button {
-    @apply rounded-full flex items-center justify-center;
-    @apply w-12 h-12 sm:w-14 sm:h-14;
-    @apply transition-all duration-500;
-    @apply transform hover:scale-110 active:scale-95;
-    @apply touch-manipulation;
-    background: var(--gradient-primary);
-    box-shadow: 
-      0 20px 40px -10px var(--shadow),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    animation: floatButton 6s ease-in-out infinite;
-  }
+  @apply rounded-full flex items-center justify-center overflow-hidden;
+  @apply w-12 h-12 sm:w-14 sm:h-14;
+  @apply transition-all duration-500;
+  @apply transform hover:scale-110 active:scale-95;
+  @apply touch-manipulation;
+  background: var(--gradient-primary);
+  box-shadow: 
+    0 20px 40px -10px var(--shadow),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  animation: floatButton 6s ease-in-out infinite;
+}
 }
 
 .talk-to-luna {
