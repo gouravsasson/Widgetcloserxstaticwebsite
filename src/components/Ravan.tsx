@@ -62,12 +62,19 @@ const RavanVoiceAI = () => {
     }
   }, [status]);
 
-  useEffect(() => {
-  const handler = () => setExpanded(true);
-  window.addEventListener("open-widget", handler);
+ useEffect(() => {
+  const handler = () => {
+    setExpanded(true);
 
+    setTimeout(() => {
+      handleMicClick();
+    }, 100); 
+  };
+
+  window.addEventListener("open-widget", handler);
   return () => window.removeEventListener("open-widget", handler);
 }, []);
+
 
 
   useEffect(() => {
