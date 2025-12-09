@@ -116,6 +116,7 @@ const RavanVoiceAI = () => {
     if (auto_end_call) {
       const handleClose = async () => {
         localStorage.clear();
+  window.dispatchEvent(new Event("widget-closed"));
 
         await session.leaveCall();
         console.log("call left successfully first time");
