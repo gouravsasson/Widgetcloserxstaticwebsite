@@ -6,7 +6,7 @@ import { UltravoxSession } from "ultravox-client";
 import useSessionStore from "../store/session";
 import { useWidgetContext } from "../constexts/WidgetContext";
 import { useUltravoxStore } from "../store/ultrasession";
-import logo from "../assets/logo.png";
+import logo from "../assets/Untitled design (8).png";
 
 const RavanVoiceAI = () => {
   const [expanded, setExpanded] = useState(false);
@@ -407,9 +407,9 @@ const RavanVoiceAI = () => {
                   <div className="relative">
                     {isGlowing && <div className="glow-effect"></div>}
                     <img
-                      src="https://storage.googleapis.com/msgsndr/3Mh94ewIWZaOQuAxTDt4/media/6903148c4f4aad24be14c53f.jpeg"
+                      src={logo}
                       alt="Closerx AI logo"
-                      className={`w-full h-full object-cover scale-90 transition-transform duration-300 ${
+                      className={`w-full h-full object-cover  transition-transform duration-300 ${
                         isRecording ? "scale-100" : "scale-90"
                       }`}
                     />
@@ -470,9 +470,9 @@ const RavanVoiceAI = () => {
   <div className="relative w-full h-full">
     <div className="glow-ring absolute inset-0 z-0"></div>
     <img
-      src="https://storage.googleapis.com/msgsndr/3Mh94ewIWZaOQuAxTDt4/media/6903148c4f4aad24be14c53f.jpeg"
+      src={logo}
       alt="Closerx AI logo"
-      className="w-full h-full object-cover scale-90 relative z-10"
+      className="w-full h-full object-cover  relative z-10"
     />
   </div>
 </button>
