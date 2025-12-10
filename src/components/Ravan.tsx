@@ -409,9 +409,7 @@ const RavanVoiceAI = () => {
                     <img
                       src={logo}
                       alt="Closerx AI logo"
-                      className={`w-full h-full object-cover  transition-transform duration-300 ${
-                        isRecording ? "scale-100" : "scale-90"
-                      }`}
+                      className={`w-full h-full object-cover  transition-transform duration-300 `}
                     />
                   </div>
                 </button>
