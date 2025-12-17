@@ -7,6 +7,7 @@ import useSessionStore from "../store/session";
 import { useWidgetContext } from "../constexts/WidgetContext";
 import { useUltravoxStore } from "../store/ultrasession";
 import logo from "../assets/Untitled design (8).png";
+import santa from "../assets/santa-hat.png";
 
 const RavanVoiceAI = () => {
   const [expanded, setExpanded] = useState(false);
@@ -15,6 +16,8 @@ const RavanVoiceAI = () => {
   const containerRef = useRef(null);
   const [isGlowing, setIsGlowing] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+    const [isMutedMic, setIsMutedMic] = useState(false);
+
   const [speech, setSpeech] = useState("");
   const [isVisible, setIsVisible] = useState(true);
   // const { agent_id, schema } = useWidgetContext();
@@ -82,8 +85,10 @@ const RavanVoiceAI = () => {
       if (document.visibilityState === "hidden") {
         console.log("gg", document.visibilityState);
         session.muteSpeaker();
+        session.mutMic();
       } else if (document.visibilityState === "visible") {
         session.unmuteSpeaker();
+        session.unmuteMic();
       }
     };
 
@@ -152,9 +157,12 @@ const RavanVoiceAI = () => {
     if (callId && status === "disconnected") {
       console.log("reconnecting");
       setIsMuted(true);
-      handleMicClickForReconnect(callId);
+      setIsMutedMic(true)
+      // handleMicClickForReconnect(callId);
     } else if (status === "listening" && callId && isMuted) {
       session.muteSpeaker();
+      session.muteMic();
+
     }
   }, [status]);
 
@@ -281,7 +289,9 @@ const RavanVoiceAI = () => {
     }
     if (session.isSpeakerMuted) {
       setIsMuted(false);
+      setIsMutedMic(false)
       session.unmuteSpeaker();
+      session.unmuteMic();
     }
 
     setExpanded(!expanded);
@@ -294,6 +304,14 @@ const RavanVoiceAI = () => {
       session.unmuteSpeaker();
     } else {
       session.muteSpeaker();
+    }
+  };
+  const toggleMuteMic = () => {
+    setIsMutedMic(!isMutedMic);
+    if (session.isMicMuted) {
+      session.unmuteMic();
+    } else {
+      session.muteMic();
     }
   };
 
@@ -341,6 +359,16 @@ const RavanVoiceAI = () => {
   return (
     <div className="widget-container">
       {expanded ? (
+        <>
+        <div className="absolute -top-10 -left-8 z-20 -rotate-12 pointer-events-none">
+              <img
+                src={santa}
+
+                alt="Santa Hat"
+                className="w-20 h-20 object-contain drop-shadow-lg -rotate-12"
+              />
+            </div>
+
         <div
           className={`chat-window ${isMinimized ? "minimized" : ""} ${
             isGlowing
@@ -356,6 +384,13 @@ const RavanVoiceAI = () => {
               <span className="header-title text-sm ">Closerx Assistant</span>
             </div>
             <div className="header-controls">
+               <button
+                onClick={toggleMuteMic}
+                className="control-button"
+                title={isMutedMic ? "Unmute" : "Mute"}
+              >
+                {isMutedMic ? <MicOff size={18} /> : <Mic size={18} />}
+              </button>
               <button
                 onClick={toggleMute}
                 className="control-button"
@@ -462,9 +497,17 @@ const RavanVoiceAI = () => {
             </div>
           )}
         </div>
+        </>
       ) : (
         <div className="flex flex-col items-center justify-center gap-1">
           <button onClick={toggleExpand} className="floating-button">
+            <div className="absolute -top-10 -left-3 rotate-12  pointer-events-none">
+                <img
+                  src={santa}
+                  alt="Santa Hat"
+                  className="w-16 h-16 object-contain drop-shadow-md -rotate-12"
+                />
+              </div>
   <div className="relative w-full h-full">
     <div className="glow-ring absolute inset-0 z-0"></div>
     <img
